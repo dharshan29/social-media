@@ -2,23 +2,20 @@ import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import styles from "./index.style";
 
-const Post = () => {
+const Post = ({ description, photo }) => {
 	return (
 		<Box sx={styles.wrapperStyle}>
 			<Card sx={styles.card}>
 				<CardMedia
 					sx={styles.image}
 					component="img"
-					alt="green iguana"
+					alt={description}
 					height="140"
-					image="https://media.tacdn.com/media/attractions-splice-spp-674x446/09/c3/33/97.jpg"
+					image={photo && photo}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
-						Dharshan
-					</Typography>
-					<Typography variant="body2" color="text.secondary">
-						email
+						{description && description}
 					</Typography>
 				</CardContent>
 			</Card>

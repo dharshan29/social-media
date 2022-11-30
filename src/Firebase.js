@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBBXCRGt-YLDhz4M9KcQbTqBsB-yZNirbw",
@@ -15,26 +15,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// authentication
 export const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider();
-
-export const signInWithGoogle = () => {
-	signInWithPopup(auth, provider)
-		.then((result) => {
-			const { displayName, email, photoURL } = result.user;
-
-			localStorage.setItem(
-				"user",
-				JSON.stringify({
-					name: displayName,
-					email,
-					profilePic: photoURL,
-				})
-			);
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-};
+// storage
+export const storage = getStorage(app);
