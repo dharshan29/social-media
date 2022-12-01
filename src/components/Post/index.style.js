@@ -12,10 +12,13 @@ export default {
 			objectFit: "fill",
 		},
 	},
-	image: {
+	image: (theme) => ({
 		borderRadius: 2,
 		height: 350,
-	},
+		[theme.breakpoints.down("sm")]: {
+			height: 280,
+		},
+	}),
 	optionButton: {
 		position: "absolute",
 		top: 0,
@@ -26,7 +29,8 @@ export default {
 		top: "50%",
 		left: "50%",
 		transform: "translate(-50%, -50%)",
-		width: 400,
+		maxWidth: 400,
+		minWidth: 250,
 		bgcolor: "background.paper",
 		borderRadius: 2,
 		boxShadow: 24,

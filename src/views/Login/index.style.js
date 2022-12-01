@@ -4,14 +4,29 @@ export default {
 		minHeight: "100vh",
 		position: "relative",
 	},
-	loginContainer: {
+	video: {
 		position: "absolute",
 		top: 0,
-		bottom: 0,
 		left: 0,
-		right: 0,
+		width: "100%",
+		height: "100%",
+		overflow: "hidden",
+		"& video": {
+			minWidth: "100%",
+			minHeight: "100%",
+			objectFit: "cover",
+			position: "absolute",
+			top: "50%",
+			left: "50%",
+			transform: "translate(-50%,-50%)",
+		},
+	},
+	loginContainer: {
+		height: "100vh",
 		justifyContent: "center",
-		flexDirection: "row",
+		alignItems: "center",
+		gap: 1,
+		zIndex: 1,
 	},
 	button: {
 		height: "fit-content",

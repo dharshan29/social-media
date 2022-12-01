@@ -102,53 +102,55 @@ const Posts = () => {
 	}, [handleSubmit]);
 
 	return (
-		<Stack sx={styles.wrapperStyle}>
-			<Box sx={styles.addPost}>
-				<TextField
-					sx={styles.input}
-					value={text}
-					placeholder="What's happening?"
-					variant="outlined"
-					onChange={(e) => setText(e.target.value)}
-				/>
-				<Stack sx={styles.postOption}>
-					<Button
-						onClick={() => imageRef.current.click()}
-						variant="text"
-						startIcon={<MdOutlinePhotoSizeSelectActual />}
-					>
-						Photo
-					</Button>
-					<Button variant="text" startIcon={<MdOutlineSlowMotionVideo />}>
-						Video
-					</Button>
-					<Button variant="contained" onClick={(e) => handleSubmit(e)}>
-						share
-					</Button>
-				</Stack>
-				<Box style={{ display: "none" }}>
-					<input
-						type="file"
-						name="myImage"
-						ref={imageRef}
-						onChange={onImageChange}
+		<Box sx={styles.wrapperStyle}>
+			<Stack sx={styles.container}>
+				<Box sx={styles.addPost}>
+					<TextField
+						sx={styles.input}
+						value={text}
+						placeholder="What's happening?"
+						variant="outlined"
+						onChange={(e) => setText(e.target.value)}
 					/>
-				</Box>
-				{image && (
-					<Box sx={styles.previewImage}>
-						<IoClose onClick={() => setImage(null)} />
-						<img src={image} alt="" />
+					<Stack sx={styles.postOption}>
+						<Button
+							onClick={() => imageRef.current.click()}
+							variant="text"
+							startIcon={<MdOutlinePhotoSizeSelectActual />}
+						>
+							Photo
+						</Button>
+						<Button variant="text" startIcon={<MdOutlineSlowMotionVideo />}>
+							Video
+						</Button>
+						<Button variant="contained" onClick={(e) => handleSubmit(e)}>
+							share
+						</Button>
+					</Stack>
+					<Box style={{ display: "none" }}>
+						<input
+							type="file"
+							name="myImage"
+							ref={imageRef}
+							onChange={onImageChange}
+						/>
 					</Box>
+					{image && (
+						<Box sx={styles.previewImage}>
+							<IoClose onClick={() => setImage(null)} />
+							<img src={image} alt="" />
+						</Box>
+					)}
+				</Box>
+				{userData ? (
+					userData?.map((item) => {
+						return <Post key={Object.keys(item)[0]} item={item} />;
+					})
+				) : (
+					<Typography variant="h4">No Post to Display</Typography>
 				)}
-			</Box>
-			{userData ? (
-				userData?.map((item) => {
-					return <Post key={Object.keys(item)[0]} item={item} />;
-				})
-			) : (
-				<Typography variant="h4">No Post to Display</Typography>
-			)}
-		</Stack>
+			</Stack>
+		</Box>
 	);
 };
 

@@ -223,7 +223,12 @@ const Post = ({ item }) => {
 						<TbSend />
 					</Stack>
 					<Typography
-						sx={{ textAlign: "start", marginBottom: 0, marginTop: 1 }}
+						sx={{
+							textAlign: "start",
+							marginBottom: 0,
+							marginTop: 1,
+							wordWrap: "break-word",
+						}}
 						variant="h6"
 					>
 						{description && description}

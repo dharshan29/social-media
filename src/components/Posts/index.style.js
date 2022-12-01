@@ -1,13 +1,17 @@
 export default {
 	wrapperStyle: {
 		flex: 2,
-		gap: 2,
-		height: "calc(100vh - 32px)",
+		height: "calc(100vh - 98px)",
 		overflow: "auto",
-		paddingBottom: 2,
+		paddingY: 2,
 		"&::-webkit-scrollbar": {
 			width: 0,
 		},
+	},
+	container: {
+		gap: 2,
+		width: "90%",
+		margin: "auto",
 	},
 	addPost: {
 		background: "white",

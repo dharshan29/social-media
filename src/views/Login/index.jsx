@@ -7,6 +7,7 @@ import shareVideo from "../../assests/media.mp4";
 import { auth } from "../../Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { media } from "../../assests";
 
 const Login = () => {
 	const provider = new GoogleAuthProvider();
@@ -67,10 +68,10 @@ const Login = () => {
 	};
 
 	return (
-		<Box sx={styles.wrapperStyle}>
+		<Stack sx={styles.wrapperStyle}>
 			<Box sx={styles.video}>
 				<video
-					style={{ height: "100%", width: "100%" }}
+					// style={{ height: "100%", width: "100%" }}
 					src={shareVideo}
 					type="video/mp4"
 					loop
@@ -81,6 +82,7 @@ const Login = () => {
 			</Box>
 
 			<Stack sx={styles.loginContainer}>
+				<img src={media} height="100px" width="200px" />
 				<Button
 					sx={styles.button}
 					variant="outlined"
@@ -90,7 +92,7 @@ const Login = () => {
 					Sign in with Google
 				</Button>
 			</Stack>
-		</Box>
+		</Stack>
 	);
 };
 

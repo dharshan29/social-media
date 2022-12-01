@@ -1,9 +1,29 @@
 export default {
 	wrapperStyle: {
 		width: "100%",
-		minHeight: "calc(100vh - 16px)",
+		minHeight: "calc(100vh - 66px)",
 		flexDirection: "row",
-		paddingTop: 2,
 		background: "linear-gradient(to right, #bdc3c7, #2c3e50)",
+		marginTop: "66px",
+		overflow: "hidden",
+	},
+	appBar: (theme) => ({
+		background: "#bdc3c7",
+		boxShadow: "2px 4px 21px 1px rgba(0,0,0,0.75)",
+		paddingY: 1,
+		paddingLeft: 2,
+		[theme.breakpoints.down("md")]: {
+			paddingX: 2,
+			flexDirection: "row",
+			alignItems: "center",
+			justifyContent: "space-between",
+		},
+	}),
+	modal: {
+		position: "absolute",
+		top: "50%",
+		left: "50%",
+		transform: "translate(-50%, -50%)",
+		minWidth: 300,
 	},
 };
