@@ -1,5 +1,3 @@
-import { calculateNewValue } from "@testing-library/user-event/dist/utils";
-
 export default {
 	wrapperStyle: {
 		flex: 2,
@@ -7,6 +5,9 @@ export default {
 		height: "calc(100vh - 32px)",
 		overflow: "auto",
 		paddingBottom: 2,
+		"&::-webkit-scrollbar": {
+			width: 0,
+		},
 	},
 	addPost: {
 		background: "white",

@@ -6,9 +6,12 @@ import styles from "./index.style";
 import shareVideo from "../../assests/media.mp4";
 import { auth } from "../../Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 	const provider = new GoogleAuthProvider();
+
+	const navigate = useNavigate();
 
 	const signInWithGoogle = () => {
 		signInWithPopup(auth, provider)
@@ -56,6 +59,7 @@ const Login = () => {
 				};
 
 				userExist();
+				navigate("/");
 			})
 			.catch((error) => {
 				console.log(error);

@@ -82,20 +82,22 @@ const Posts = () => {
 		}
 	}, [handleSubmit, imagehandler]);
 
+	const fetchUserData = async () => {
+		const data = await fetch(
+			`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}.json`
+		)
+			.then((response) => response.json())
+			.then((json) => {
+				return json;
+			})
+			.catch((err) => console.log(err));
+		if (data) {
+			const userData = Object.entries(data).map((e) => ({ [e[0]]: e[1] }));
+			setUserData(userData);
+		}
+	};
+
 	useEffect(() => {
-		const fetchUserData = async () => {
-			const data = await fetch(
-				`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}.json`
-			)
-				.then((response) => response.json())
-				.then((json) => {
-					return json;
-				})
-				.catch((err) => console.log(err));
-			if (data) {
-				setUserData(Object.values(data));
-			}
-		};
 		fetchUserData();
 	}, [handleSubmit]);
 
@@ -141,8 +143,7 @@ const Posts = () => {
 			</Box>
 			{userData ? (
 				userData?.map((item) => {
-					const { description, photo } = item;
-					return <Post description={description} photo={photo} />;
+					return <Post key={Object.keys(item)[0]} item={item} />;
 				})
 			) : (
 				<Typography variant="h4">No Post to Display</Typography>
