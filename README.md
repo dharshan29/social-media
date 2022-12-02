@@ -90,7 +90,6 @@ _Below is an example of how you can instruct your audience on installing and set
 4. Enter your Firebase SDK config keys and base_URL from realtime database in .env
 
    ```js
-   const API_KEY = "ENTER YOUR API";
    REACT_APP_API_KEY = "apiKey";
    REACT_APP_APP_ID = "appid";
    REACT_APP_AUTH_DOMAIN = "authdomain";
