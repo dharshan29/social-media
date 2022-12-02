@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://firebasestorage.googleapis.com/v0/b/media-7d6da.appspot.com/o/images%2Fbdc025e8-25a0-4e34-8b42-3bc6dfb00803?alt=media&token=70ed8e06-029e-4c1e-9c70-a85604fcba08" alt="Logo" width="160" height="80">
+  </a>
 
-## Available Scripts
+  <h3 align="center">Media</h3>
 
-In the project directory, you can run:
+  <p align="center">
+   This project was bootstrapped with Create React App.
+    <br />
+    <a href="https://github.com/dharshan29/social-media"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://zingy-fudge-1cb481.netlify.app">View Demo</a>
+  </p>
+</div>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+It is a full Stack Web Application built with ReactJs (frontEnd) and Firebase (backend and storage) with other libraries. This website uses Google auth) for Authentication, On successful login get navigated to Home page. where we can see all the post shared and we can also post,edit and delete our posts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [![React][react.js]][react-url]
+- [![Material UI][materialui.com]][materialui-url]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run eject`
+<!-- GETTING STARTED -->
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is an example of how to list things you need to use the software and how to install them.
 
-## Learn More
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-### Code Splitting
+1. Create firebase account and Import firebase SDK and setup firebase Authentication(Google Auth), realtime database and Storage.
+2. Clone the repo
+   ```sh
+   git clone https://github.com/dharshan29/social-media.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your Firebase SDK config keys and base URL from realtime database in .env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```js
+   const API_KEY = "ENTER YOUR API";
+   REACT_APP_API_KEY = "apiKey";
+   REACT_APP_APP_ID = "appid";
+   REACT_APP_AUTH_DOMAIN = "authdomain";
+   REACT_APP_PROJECT_ID = "projectid";
+   REACT_APP_STORAGE_BUCKET = "storagebucket";
+   REACT_APP_MESSAGE_SENDER_ID = "messagesenderid";
+   REACT_APP_MEASUREMENT_ID = "measurementid";
 
-### Analyzing the Bundle Size
+   REACT_APP_BASE_URL = "https://firebasedatabase.app";
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Making a Progressive Web App
+<!-- CONTACT -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+Your Name - [@dharshant](https://www.linkedin.com/in/dharshan-t-330179205/) - dharshant2000@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Project Link: [https://github.com/dharshan29/social-media](https://github.com/dharshan29/social-media)
 
-### Deployment
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- ACKNOWLEDGMENTS -->
 
-### `npm run build` fails to minify
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+- [Material UI](https://mui.com/)
+- [React Icons](https://react-icons.github.io/react-icons/search)
+- [GitHub Readme.md Template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[materialui.com]: https://cdn-media-1.freecodecamp.org/images/1*FDNeKIUeUnf0XdqHmi7nsw.png
+[materialui-url]: https://mui.com/
