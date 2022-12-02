@@ -87,7 +87,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Enter your Firebase SDK config keys and base URL from realtime database in .env
+4. Enter your Firebase SDK config keys in firebase.js and base_URL from realtime database in .env
 
    ```js
    const API_KEY = "ENTER YOUR API";
