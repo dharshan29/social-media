@@ -21,7 +21,7 @@ const Login = () => {
 
 				const userExist = async () => {
 					const userData = await fetch(
-						`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}.json`
+						`${process.env.REACT_APP_BASE_URL}/users/${uid}.json`
 					)
 						.then((response) => response.json())
 						.then((json) => {
@@ -33,20 +33,17 @@ const Login = () => {
 						})
 						.catch((err) => console.log(err));
 					if (userData === undefined) {
-						await fetch(
-							`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}.json`,
-							{
-								method: "PUT",
-								body: JSON.stringify({
-									name: displayName,
-									email,
-									profilePic: photoURL,
-								}),
-								headers: {
-									"Content-type": "application/json; charset=UTF-8",
-								},
-							}
-						)
+						await fetch(`${process.env.REACT_APP_BASE_URL}/users/${uid}.json`, {
+							method: "PUT",
+							body: JSON.stringify({
+								name: displayName,
+								email,
+								profilePic: photoURL,
+							}),
+							headers: {
+								"Content-type": "application/json; charset=UTF-8",
+							},
+						})
 							.then((response) => response.json())
 							.then((json) => {
 								if (json) {

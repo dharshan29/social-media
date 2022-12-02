@@ -1,11 +1,9 @@
 import {
 	Box,
-	Button,
 	Card,
 	CardContent,
 	CardMedia,
 	Stack,
-	TextField,
 	Typography,
 } from "@mui/material";
 
@@ -13,17 +11,12 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { TbMessageDots, TbSend } from "react-icons/tb";
 import React, { useEffect, useState } from "react";
 import styles from "./index.style";
-import Post from "../Post";
 
 const AllPosts = () => {
 	const [userData, setUserData] = useState(null);
 
-	useEffect(() => {}, []);
-
 	const fetchUserData = async () => {
-		const data = await fetch(
-			`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json`
-		)
+		const data = await fetch(`${process.env.REACT_APP_BASE_URL}/posts.json`)
 			.then((response) => response.json())
 			.then((json) => {
 				return json;

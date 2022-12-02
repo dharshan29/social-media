@@ -60,19 +60,16 @@ const Posts = () => {
 
 	useEffect(() => {
 		if (url && text) {
-			fetch(
-				`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}.json`,
-				{
-					method: "POST",
-					body: JSON.stringify({
-						description: text,
-						photo: url,
-					}),
-					headers: {
-						"Content-type": "application/json; charset=UTF-8",
-					},
-				}
-			)
+			fetch(`${process.env.REACT_APP_BASE_URL}/posts/${uid}.json`, {
+				method: "POST",
+				body: JSON.stringify({
+					description: text,
+					photo: url,
+				}),
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
+			})
 				.then((response) => response.json())
 				.then((json) => console.log(json));
 
@@ -84,7 +81,7 @@ const Posts = () => {
 
 	const fetchUserData = async () => {
 		const data = await fetch(
-			`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}.json`
+			`${process.env.REACT_APP_BASE_URL}/posts/${uid}.json`
 		)
 			.then((response) => response.json())
 			.then((json) => {

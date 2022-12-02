@@ -66,7 +66,7 @@ const Post = ({ item }) => {
 
 	const handleDelete = async () => {
 		await fetch(
-			`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}/${postId}.json`,
+			`${process.env.REACT_APP_BASE_URL}/posts/${uid}/${postId}.json`,
 			{
 				method: "DELETE",
 			}
@@ -105,19 +105,16 @@ const Post = ({ item }) => {
 	useEffect(() => {
 		if (url && text) {
 			console.log(url);
-			fetch(
-				`https://media-7d6da-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${uid}/${postId}.json`,
-				{
-					method: "PUT",
-					body: JSON.stringify({
-						description: text,
-						photo: url,
-					}),
-					headers: {
-						"Content-type": "application/json; charset=UTF-8",
-					},
-				}
-			)
+			fetch(`${process.env.REACT_APP_BASE_URL}/posts/${uid}/${postId}.json`, {
+				method: "PUT",
+				body: JSON.stringify({
+					description: text,
+					photo: url,
+				}),
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
+			})
 				.then((response) => response.json())
 				.then((json) => console.log(json));
 
