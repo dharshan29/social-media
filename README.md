@@ -78,7 +78,7 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Create firebase account and Import firebase SDK and setup firebase Authentication(Google Auth), realtime database and Storage.
+1. Create firebase account and Import firebase SDK in firebase.js and setup firebase Authentication(Google Auth), realtime database and Storage.
 2. Clone the repo
    ```sh
    git clone https://github.com/dharshan29/social-media.git
@@ -87,7 +87,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Enter your Firebase SDK config keys in firebase.js and base_URL from realtime database in .env
+4. Enter your Firebase SDK config keys and base_URL from realtime database in .env
 
    ```js
    const API_KEY = "ENTER YOUR API";
