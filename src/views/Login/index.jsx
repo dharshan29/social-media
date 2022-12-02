@@ -8,6 +8,7 @@ import { auth } from "../../Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { media } from "../../assests";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 	const provider = new GoogleAuthProvider();
@@ -67,6 +68,9 @@ const Login = () => {
 
 	return (
 		<Stack sx={styles.wrapperStyle}>
+			<Helmet>
+				<title>Login</title>
+			</Helmet>
 			<Box sx={styles.video}>
 				<video
 					src={shareVideo}

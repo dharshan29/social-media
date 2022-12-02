@@ -11,6 +11,7 @@ import {
 	useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { media, media1, profile } from "../../assests";
 import AllPosts from "../../components/AllPosts";
 import Posts from "../../components/Posts";
@@ -32,6 +33,9 @@ const Home = () => {
 	const handleClose = () => setOpen(false);
 	return (
 		<>
+			<Helmet>
+				<title>Home</title>
+			</Helmet>
 			<AppBar position="fixed" sx={styles.appBar}>
 				<img src={media} height="50px" width="100px" />
 				{!matches && (
