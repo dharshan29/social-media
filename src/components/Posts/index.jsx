@@ -96,7 +96,6 @@ const Posts = () => {
 			setUserData(userData);
 		}
 	};
-
 	useEffect(() => {
 		fetchUserData();
 	}, [handleSubmit]);
@@ -142,6 +141,7 @@ const Posts = () => {
 						</Box>
 					)}
 				</Box>
+
 				{userData ? (
 					userData?.map((item) => {
 						return <Post key={Object.keys(item)[0]} item={item} />;

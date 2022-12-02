@@ -57,4 +57,33 @@ export default {
 			borderRadius: 1,
 		},
 	},
+	boxStyle: {
+		background: "white",
+		padding: 2,
+		borderRadius: 2,
+	},
+	card: {
+		position: "relative",
+		borderRadius: 2,
+		boxShadow: "none",
+		"& > img": {
+			objectFit: "fill",
+		},
+	},
+	image: (theme) => ({
+		borderRadius: 2,
+		height: 350,
+		[theme.breakpoints.down("sm")]: {
+			height: 280,
+		},
+	}),
+	actionButton: {
+		flexDirection: "row",
+		gap: 2,
+		"& svg": {
+			height: 32,
+			width: 32,
+			cursor: "pointer",
+		},
+	},
 };

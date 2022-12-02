@@ -27,6 +27,7 @@ const Login = () => {
 						.then((json) => {
 							if (json) {
 								localStorage.setItem("user", JSON.stringify({ ...json, uid }));
+								navigate("/");
 								return json;
 							}
 						})
@@ -53,6 +54,7 @@ const Login = () => {
 										"user",
 										JSON.stringify({ ...json, uid })
 									);
+									navigate("/");
 									return json;
 								}
 							});
@@ -60,7 +62,6 @@ const Login = () => {
 				};
 
 				userExist();
-				navigate("/");
 			})
 			.catch((error) => {
 				console.log(error);
@@ -71,7 +72,6 @@ const Login = () => {
 		<Stack sx={styles.wrapperStyle}>
 			<Box sx={styles.video}>
 				<video
-					// style={{ height: "100%", width: "100%" }}
 					src={shareVideo}
 					type="video/mp4"
 					loop

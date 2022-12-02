@@ -19,6 +19,30 @@ export default {
 			justifyContent: "space-between",
 		},
 	}),
+	container: {
+		flex: 2,
+		height: "calc(100vh - 98px)",
+		overflow: "auto",
+		paddingY: 2,
+		"&::-webkit-scrollbar": {
+			width: 0,
+		},
+	},
+	tabs: {
+		width: "90%",
+		marginX: "auto",
+		"& .MuiTabs-indicator": {
+			backgroundColor: "black",
+		},
+	},
+	tab: {
+		flex: 1,
+		textTransform: "none",
+		color: "white",
+		"&.Mui-selected": {
+			color: "black",
+		},
+	},
 	modal: {
 		position: "absolute",
 		top: "50%",

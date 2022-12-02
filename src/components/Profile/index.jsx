@@ -7,14 +7,20 @@ import {
 	CardMedia,
 	Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.style";
 import { BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { profile } from "../../assests";
 
 const Profile = () => {
-	const data = localStorage.getItem("user");
+	const [data, setData] = useState(null);
+
+	useEffect(() => {
+		const userData = localStorage.getItem("user");
+		setData(userData);
+	}, []);
+
 	const navigate = useNavigate();
 
 	const { profilePic, name, email } = data ? JSON.parse(data) : "";
@@ -33,10 +39,10 @@ const Profile = () => {
 					height="200"
 					image={profilePic ? profilePic : profile}
 				/>
-				<CardContent>
+				<CardContent sx={{ paddingY: 1 }}>
 					<Typography variant="h6">{name}</Typography>
 				</CardContent>
-				<CardContent>
+				<CardContent sx={{ paddingY: 1 }}>
 					<Typography sx={{ wordWrap: "break-word" }} variant="body2">
 						{email}
 					</Typography>

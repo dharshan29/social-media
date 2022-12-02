@@ -5,11 +5,14 @@ import {
 	IconButton,
 	Modal,
 	Stack,
+	Tab,
+	Tabs,
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { media, media1, profile } from "../../assests";
+import AllPosts from "../../components/AllPosts";
 import Posts from "../../components/Posts";
 import Profile from "../../components/Profile";
 import Settings from "../../components/Settings";
@@ -19,7 +22,12 @@ const Home = () => {
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up("md"));
 
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState(false);
+	const [value, setValue] = useState("allPosts");
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 	return (
@@ -46,11 +54,35 @@ const Home = () => {
 				{matches ? (
 					<>
 						<Profile />
-						<Posts />
+						<Stack sx={styles.container}>
+							<Tabs
+								sx={styles.tabs}
+								value={value}
+								onChange={handleChange}
+								aria-label="Tabs"
+							>
+								<Tab sx={styles.tab} value="allPosts" label="All Posts" />
+								<Tab sx={styles.tab} value="myPosts" label="My Posts" />
+							</Tabs>
+							{value === "allPosts" && <AllPosts />}
+							{value === "myPosts" && <Posts />}
+						</Stack>
 						<Settings />
 					</>
 				) : (
-					<Posts />
+					<Stack sx={styles.container}>
+						<Tabs
+							sx={styles.tabs}
+							value={value}
+							onChange={handleChange}
+							aria-label="Tabs"
+						>
+							<Tab sx={styles.tab} value="allPosts" label="All Posts" />
+							<Tab sx={styles.tab} value="myPosts" label="My Posts" />
+						</Tabs>
+						{value === "allPosts" && <AllPosts />}
+						{value === "myPosts" && <Posts />}
+					</Stack>
 				)}
 			</Stack>
 		</>
